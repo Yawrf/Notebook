@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="798.0" prefWidth="1331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="notebook.FXMLDocumentController">
+   <children>
+      <Label layoutX="297.0" layoutY="50.0" text="Title:" />
+      <TextField fx:id="titleField" alignment="CENTER" editable="false" layoutX="331.0" layoutY="37.0" prefHeight="46.0" prefWidth="664.0" promptText="Title">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="250.0" layoutY="100.0" text="Description:" />
+      <TextArea fx:id="descriptionArea" editable="false" layoutX="331.0" layoutY="100.0" prefHeight="117.0" prefWidth="664.0" promptText="Description" wrapText="true" />
+      <Label layoutX="292.0" layoutY="229.0" text="Body:" />
+      <TextArea fx:id="bodyArea" editable="false" layoutX="331.0" layoutY="229.0" prefHeight="267.0" prefWidth="664.0" promptText="Body" wrapText="true" />
+      <Label layoutX="253.0" layoutY="516.0" text="References:" />
+      <ListView fx:id="referencesList" layoutX="331.0" layoutY="516.0" onMouseClicked="#referenceSelect" prefHeight="151.0" prefWidth="664.0" />
+      <Label layoutX="295.0" layoutY="675.0" text="Tags:" />
+      <ListView fx:id="noteTagsList" layoutX="331.0" layoutY="675.0" prefHeight="108.0" prefWidth="664.0" />
+      <Label layoutX="110.0" layoutY="30.0" text="Tags" />
+      <ListView fx:id="tagsList" layoutY="49.0" onMouseClicked="#tagSelect" prefHeight="706.0" prefWidth="250.0" />
+      <Button layoutX="66.0" layoutY="755.0" mnemonicParsing="false" onAction="#clearTag" text="Clear Selection" />
+      <Label layoutX="1125.0" layoutY="30.0" text="Saved Notes" />
+      <ListView fx:id="notesList" layoutX="1001.0" layoutY="49.0" onMouseClicked="#noteSelect" prefHeight="742.0" prefWidth="330.0" />
+      <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="1331.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newNote" text="New Note">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#editNote" text="Edit Active Note">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#deleteNote" text="Delete Active Note">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#exitApp" text="Exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Popouts">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#closeAllPopouts" text="Close All Popouts" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

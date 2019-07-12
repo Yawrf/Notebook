@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="966.0" prefWidth="896.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="new_edit.FXMLDocumentController">
+   <children>
+      <Label layoutX="105.0" layoutY="94.0" text="Title:" />
+      <TextField fx:id="titleField" alignment="CENTER" layoutX="139.0" layoutY="81.0" prefHeight="46.0" prefWidth="664.0" promptText="Title">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Label layoutX="58.0" layoutY="144.0" text="Description:" />
+      <TextArea fx:id="descriptionArea" layoutX="139.0" layoutY="144.0" prefHeight="117.0" prefWidth="664.0" promptText="Description" wrapText="true" />
+      <Label layoutX="100.0" layoutY="273.0" text="Body:" />
+      <TextArea fx:id="bodyArea" layoutX="139.0" layoutY="273.0" prefHeight="267.0" prefWidth="664.0" promptText="Body" wrapText="true" />
+      <Label layoutX="63.0" layoutY="553.0" text="References:" />
+      <ListView fx:id="referencesIn" layoutX="139.0" layoutY="553.0" onMouseClicked="#referencePopout" prefHeight="151.0" prefWidth="301.0">
+         <tooltip>
+            <Tooltip text="Right-Click to Popout Reference" />
+         </tooltip></ListView>
+      <Button layoutX="457.0" layoutY="598.0" mnemonicParsing="false" onAction="#referenceIn" text="→" />
+      <Button layoutX="457.0" layoutY="629.0" mnemonicParsing="false" onAction="#referenceOut" text="←" />
+      <ListView fx:id="referencesOut" layoutX="502.0" layoutY="553.0" prefHeight="151.0" prefWidth="301.0" />
+      <Label layoutX="104.0" layoutY="712.0" text="Tags:" />
+      <ListView fx:id="tagsIn" layoutX="139.0" layoutY="712.0" prefHeight="107.0" prefWidth="301.0" />
+      <Button layoutX="457.0" layoutY="735.0" mnemonicParsing="false" onAction="#tagIn" text="→" />
+      <Button layoutX="457.0" layoutY="766.0" mnemonicParsing="false" onAction="#tagOut" text="←" />
+      <ListView fx:id="tagsOut" layoutX="502.0" layoutY="712.0" prefHeight="151.0" prefWidth="301.0" />
+      <MenuBar prefHeight="32.0" prefWidth="896.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#saveNote" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="newTag" layoutX="139.0" layoutY="819.0" prefHeight="44.0" prefWidth="301.0" promptText="New Tag" />
+      <Button layoutX="457.0" layoutY="826.0" mnemonicParsing="false" onAction="#newTagIn" text="→" />
+      <Button layoutX="379.0" layoutY="877.0" mnemonicParsing="false" onAction="#saveNote" prefHeight="58.0" prefWidth="189.0" text="Save">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
