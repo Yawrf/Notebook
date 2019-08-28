@@ -17,14 +17,16 @@ import javafx.stage.Stage;
  */
 public class Notebook extends Application {
     
+    private static Scene scene = null;
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         
-        stage.setScene(scene);
         stage.setTitle("Notebook by Yawrf - View Screen");
+        stage.setScene(scene);
         stage.setOnHidden(event -> {
             FXMLDocumentController.editScreen.close();
             for(Stage s : FXMLDocumentController.popoutArray) {
@@ -34,6 +36,10 @@ public class Notebook extends Application {
         stage.show();
     }
 
+    public static Scene getScene() {
+        return scene;
+    }
+    
     /**
      * @param args the command line arguments
      */

@@ -5,13 +5,10 @@
  */
 package notebook;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,9 +59,6 @@ public class FXMLDocumentController implements Initializable {
     public void editNote() {
         if(currentNote != null) {
             new_edit.FXMLDocumentController controller = openNoteEditorScreen();
-
-//            FXMLLoader loader = new FXMLLoader(new_edit.EditPage.class.getResource("FXMLDocument.fxml"));
-//            new_edit.FXMLDocumentController controller = (new_edit.FXMLDocumentController) loader.getController();
             controller.editNote(currentNote);
         }
     }
@@ -262,9 +256,7 @@ public class FXMLDocumentController implements Initializable {
     
     public void exit() {
         editScreen.close();
-        for(Stage s : popoutArray) {
-            s.close();
-        }
+        closeAllPopouts();
     }
     
 //  ----------------------------------------------------------------------------
